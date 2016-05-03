@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 凭证匹配器 -->
+    <bean id="credentialsMatcher" class="com.joint.web.shiro.credentials.RetryLimitHashedCredentialsMatcher">
+        <!--<constructor-arg ref="cacheManager"/>-->
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="2"/>
+        <property name="storedCredentialsHexEncoded" value="true"/>
+    </bean>
+
+    <!--shiro -->
+    <bean id="myShiroRealm" class="com.joint.web.shiro.realm.MyShiroRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+        <property name="cachingEnabled" value="false"/>
+    </bean>
+    <!-- 会话ID生成器 -->
+    <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+    <!-- 会话Cookie模板 -->
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="sid"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="-1"/>
+    </bean>
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="2592000"/><!-- 30天 -->
+    </bean>
+
+    <!-- rememberMe管理器 -->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <!-- rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度（128 256 512 位）-->
+        <property name="cipherKey"
+                  value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==ec')}"/>
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+
+    <!-- 会话DAO，持久化自己实现sessionDao的持久化方案，并且还需要自己实现会话的维护-->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
+        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
+    </bean>
+
+    <!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="globalSessionTimeout" value="1800000"/>
+        <property name="deleteInvalidSessions" value="true"/>
+        <!--集群环境下 不开启quartz验证服务-->
+        <property name="sessionValidationSchedulerEnabled" value="false"/>
+        <!--<property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>-->
+        <!--<property name="sessionDAO" ref="sessionDAO"/>-->
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+    </bean>
+
+    <bean id="servletContainerSessionManager" class="org.apache.shiro.web.session.mgt.ServletContainerSessionManager"/>
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myShiroRealm"/>
+        <property name="sessionManager" ref="servletContainerSessionManager"/>
+        <!--<property name="cacheManager" ref="cacheManager"/>-->
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+    </bean>
+
+    <!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+        <property name="arguments" ref="securityManager"/>
+    </bean>
+    <!-- 启用shiro 注解
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>-->
+
+    <!-- 基于Form表单的身份验证过滤器 -->
+    <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
+        <property name="usernameParam" value="username"/>
+        <property name="passwordParam" value="password"/>
+        <property name="rememberMeParam" value="rememberMe"/>
+        <property name="loginUrl" value="/com/login.action"/>
+    </bean>
+
+    <bean id="sysUserFilter" class="com.joint.web.shiro.filter.SysUserFilter"/>
+
+    <bean id="appAuthcFilter" class="com.joint.web.shiro.filter.AppAuthcFilter" />
+    <bean id="appFormAuthcFilter" class="com.joint.web.shiro.filter.AppFormAuthcFilter" />
+    <bean id="wxFormAuthcFilter" class="com.joint.web.shiro.filter.WxFormAuthcFilter" />
+
+    <bean id="wxAuthcFilter" class="com.joint.web.shiro.filter.WxAuthcFilter" >
+        <property name="loginUrl" value="./login.action"/>
+    </bean>
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/com/login.action"/>
+        <property name="successUrl" value="/com/index.action"/>
+        <property name="filters">
+            <util:map>
+                <entry key="authc" value-ref="formAuthenticationFilter"/>
+                <entry key="wxAuthc" value-ref="wxAuthcFilter"/>
+                <entry key="wxFormAuthc" value-ref="wxFormAuthcFilter"/>
+                <entry key="sysUser" value-ref="sysUserFilter"/>
+                <entry key="appAuthc" value-ref="appAuthcFilter"/>
+                <entry key="appFormAuthc" value-ref="appFormAuthcFilter"/>
+            </util:map>
+        </property>
+        <property name="filterChainDefinitions">
+            <value>
+                <!--wechat 过滤-->
+                /mp/wechat.action=anon
+                /mp/login.action = anon
+                /mp/ajax-users!resetinput.action=anon
+                /mp/ajax-users!reset.action=anon
+                /mp/ajax-users!sendAuthCode.action=anon
+                /mp/ajax-users!save.action=anon
+                /mp/file!action=anon
+                /mp/account!connectMp.action = wxFormAuthc,sysUser
+                /mp/** = wxAuthc,sysUser
+                <!--/mp/** = user,sysUser-->
+
+              <!--后台过滤-->
+                /com/register.action = anon
+                /com/register!ajaxRegister.action = anon
+                /com/register!sendAuthCode.action = anon
+                /com/file!readDoc.action = anon
+
+                /com/login.action = authc
+                /com/logout = logout
+                /com/**=user,sysUser
+                /main/**=user,sysUser
+                /manage/**=user,sysUser
+
+                <!--/manager/**=user.sysUser-->
+
+                <!--/app/help/** = anon-->
+                <!--/app/img/** = anon-->
+                /app/login.action = appFormAuthc,sysUser
+                <!--/app/account/register.action = anon-->
+                /app/** = appAuthc,sysUser
+
+                <!--/login=anon /  /index.jsp=authc
+                /login.do*=authc  /**=authc  /permission/**=roles[admin]
+                /logout.do*=anon -->
+            </value>
+        </property>
+    </bean>
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+</beans>

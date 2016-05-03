@@ -1,0 +1,374 @@
+body {
+	font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+}
+#main-platform>:first-child{display:block;color:#bfbfbf;font-size:10px;font-weight:700;text-transform:uppercase;text-shadow:0 0 1px #fff;padding-left:0;text-align:left}
+#warning-bell{
+	display: inline-block;
+	font-weight: 700;
+	height: 24px;
+	width: 24px;
+	font-size: 19px;
+	margin: 10px 0 0;
+	position: relative;
+}
+
+.warningge {
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 12px;
+
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	cursor: pointer;
+	background: #DB4A67;
+	display: inline-block;
+	font-size: 10px;
+	-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+	color: #ffffff;
+	font-weight: 400;
+	border-radius: 50%;
+	padding: 2px 4px 3px;
+	text-align: center;
+	line-height: normal;
+}
+
+nav ul b .fa-expand-o:before {
+	content: "\f104";
+}
+
+nav ul b .fa-collapse-o:before {
+	content: "\f107";
+}
+.smart-style-2 nav ul b .fa-expand-o:before {
+	content: "\f104";
+}
+
+.smart-style-2 nav ul b .fa-collapse-o:before {
+	content: "\f107";
+}
+/*
+	 * Toggle Demo
+	 */
+
+.toggle-demo {
+	position: absolute;
+	top: 10px;
+	right: -8px;
+	display: block;
+	width: 150px;
+	height: auto;
+	z-index: 99;
+	opacity: .9;
+
+}.toggle-demo:hover {
+	 opacity:1;
+ }
+
+.toggle-demo .btn-group {
+	width:100px;
+	float:left;
+}
+
+.toggle-demo > span {
+	display:inline-block;
+	float:left;
+	margin-right:5px;
+	line-height: 21px;
+	color: #757575;
+}
+
+
+/*
+ * noUISlider vertical demo
+ */
+.demo-vertical-uislider {
+
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.demo-vertical-uislider > div {
+	height:200px;
+	margin: 0 0px 0 10px;
+	display:inline-block;
+}
+
+.demo-vertical-uislider >:first-child {
+	margin-left:15px;
+}
+
+
+/*
+ * Knobs demo
+ */
+
+.knobs-demo > div {
+	display:inline-block;
+	margin-left:30px;
+}
+.knobs-demo >:first-child {
+	margin-left:0;
+}
+
+/*
+ * DEMO INPUT
+ */
+
+.demo label input[type=radio].radiobox+span:before, .demo label input[type=checkbox].checkbox+span:before {
+	border: 1px solid #5E5E5E;
+}
+
+.demo label:hover input[type=checkbox].checkbox+span:before {
+	border-color:#E77317;
+}
+
+/*
+ * DEMO
+ * Demo CSS only
+ */
+.demo label {
+	margin-bottom:4px !important;
+}
+
+.demo .checkbox i {
+	border-color: #7A7A7A;
+}
+
+.demo .radio, .demo .checkbox {
+	padding-left:22px;
+}
+
+.demo.activate {
+	right:0px !important;
+	box-shadow: -11px 12px 23px rgba(0, 0, 0, 0.2);
+}
+
+.demo {
+	position:absolute;
+	top:5px;
+	right:-160px;
+	width:160px;
+	z-index:5;
+	padding:5px 10px 10px;
+	background:#F1DA91;
+
+	-moz-transition: right .1s ease-out;
+	-ms-transition: right .1s ease-out;
+	-o-transition: right .1s ease-out;
+	-webkit-transition: right .1s ease-out;
+	transition: right .1s ease-out;
+}
+
+.demo > span {
+	position: absolute;
+	left: -30px;
+	top: 0px;
+	display: block;
+	height: 30px;
+	width: 30px;
+	border-radius: 5px 0 0 5px;
+	background: #F1DA91;
+	padding: 2px;
+	text-align: center;
+	line-height: 28px;
+	cursor:pointer;
+}
+
+.demo > span i {
+	font-size:17px;
+}
+
+.demo.activate > span i:before {
+	content: "\f00d";
+}
+
+.demo > span:hover i {
+	color:#333 !important;
+}
+
+.demo form section {
+	margin:0 !important;
+}
+
+.demo .btn {
+	font-size: 13px !important;
+	line-height: 1.5 !important;
+	border-radius: 3px !important;
+	padding: 3px 7px !important;
+	height:auto !important;
+}
+
+.demo-liveupdate-1 {
+	font-size: 12px !important;
+	position: absolute !important;
+	left: 33px;
+	top: 15px;
+	display: block;
+	z-index: 2;
+	font-weight: bold;
+	padding: 1px 61px 3px 7px;
+}
+
+.demo-btns {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.demo-btns > li {
+	display:inline-block;
+	margin-bottom:7px;
+}
+
+
+.demo-icon-font {
+	font-size: 14px;
+	margin-bottom: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.demo-icon-font:hover {
+	background-color: rgba(86, 61, 124, 0.1);
+	text-decoration: none;
+}
+
+.demo-modal {
+	width: auto;
+	max-width:600px;
+	z-index: 1;
+}
+
+.demo-red {
+	color:#DF413E
+}
+
+.demo-orange {
+	color:#DAA03E;
+}
+
+.demo-border {
+	border:1px solid rgba(0,0,0,.2)
+}
+#viewselect{
+	border-radius: 2px;
+	display: inline-block;
+	font-weight: 700;
+	height: 24px;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none!important;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	font-size: 16px;
+	margin: 12px 0 0;
+	position: relative;
+}
+#viewselect span{
+	font-size: 15px;
+}
+#show-shortcut{
+	color: #c4bab6;
+	cursor: pointer !important;
+}
+
+#show-shortcut:hover{
+	color: #fff;
+	cursor: pointer !important;
+}
+
+/**timeline*/
+.smart-timeline {
+	position: relative
+}
+
+.smart-timeline-list {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+
+.smart-timeline-list:after {
+	content: " ";
+	background-color: #eee;
+	position: absolute;
+	display: block;
+	width: 2px;
+	top: 0;
+	left: 95px;
+	bottom: 0;
+	z-index: 1
+}
+
+.smart-timeline-list li {
+	position: relative;
+	margin: 0;
+	padding: 5px 0
+}
+
+.smart-timeline-list>li:hover {
+	background-color: #f4f4f4
+}
+
+.smart-timeline-hover li:hover {
+	background-color: #f9f9f9
+}
+
+.smart-timeline-icon {
+	background: #3276b1;
+	color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	line-height: 18px;
+	font-size: 14px;
+	text-align: center;
+	left: 80px;
+	top: 5px;
+	z-index: 100;
+	padding: 2px
+}
+
+.smart-timeline-icon>img {
+	height: 22px;
+	width: 22px;
+	border-radius: 50%;
+	margin-top: -2px;
+	margin-left: -2px;
+	border: 0 solid #3276b1
+}
+
+.smart-timeline-time {
+	float: left;
+	width: 70px;
+	text-align: right
+}
+
+.smart-timeline-time>small {
+	font-style: italic
+}
+
+.smart-timeline-content {
+	margin-left: 123px
+}
+.smart-timeline pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+
+.chat-body li.message .message-text img {
+	display: inline-block;
+	border-left: 4px solid #fff;
+	position: relative;
+}

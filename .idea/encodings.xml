@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://E:/Project/eco/flow-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flow-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-dict" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/src/main/webapp/resource/com/css/images/ui-icons_0078ae_256x240.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/src/main/webapp/resource/com/css/images/ui-icons_e0fdff_256x240.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/src/main/webapp/resource/com/css/images/ui-icons_f7a50d_256x240.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/src/main/webapp/resource/com/css/images/ui-icons_fcd113_256x240.png" charset="GBK" />
+  </component>
+</project>

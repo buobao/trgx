@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.td-ul {
+    overflow: auto;
+    height: 300px;
+    width: 220px;
+    border: 1px solid #ccc;
+}
+.td-li{
+    padding: 0px 15px;
+    adding: 0px 15px;
+    border-left: 0;
+    border-right: 0;
+}
+.pull-right-fix{
+    margin-right: 5px;
+}

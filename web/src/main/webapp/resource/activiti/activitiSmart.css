@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+.smart-form .btn{
+    padding: 6px 12px;
+    margin-bottom: 0;
+}
+
+.smart-style-3 body, body.smart-style-3{
+    font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+}
+.smart-form .label{
+    text-align: right;
+}
+
+.money-unit-form{
+    padding-left:0px !important;
+    margin-left: -10px !important;
+}
+
+/*city 样式*/
+.privinces,.citys,.countys {
+    position: absolute;
+    width: 300px;
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border: 1px #d9d9d9 solid;
+    box-shadow: 3px 3px 5px rgba(128,128,128,0.2);
+}
+.privinces .a,.citys .a,.countys .a {
+    font-family: "微软雅黑"; font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    float: left;
+    *display: inline-block;
+    _display: inline;
+    zoom: 1;
+    *float: none;
+    padding: 3px 5px;
+}
+.privinces a:hover,.citys .a:hover,.countys .a:hover {
+    background-color: #f0d5d3;
+    color: #fff;
+}
+/**ztree在smartform下样式修改**/
+.smart-form span.button{
+    float: none !important;
+    padding: 0 !important;
+}
+/**修改左侧按钮间距**/
+.textarea-controls .btn{
+    margin-right:5px ;
+}
+/**iframe**/
+.dframe{
+    width: 100%;
+    height: 800px;
+}
+/**日期修改**/
+.datetimepicker-dropdown-bottom-right{
+    background:#fff !important;
+}
+
+div.ui-jqgrid-sortable{
+    text-align: center;
+}
+.ui-jqgrid-bdiv{
+    overflow-x:hidden;
+}

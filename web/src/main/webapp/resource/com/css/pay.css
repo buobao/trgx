@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*银行logo*/
+.logopay{display:inline-block;*display:inline;*zoom:1;width:120px;height:32px;background:url(./images/bank.png) no-repeat 0 0;}
+.logopay em{display:none;}
+.logo_alipay{background-position:0 0;width:128px;}
+.logo_alipay_kuai{background-position:0 -800px;width:128px;}
+.logo_tenpay{background-position:0 -32px;width:80px;}	
+.logo_onlinepay{background-position:0 -128px;width:100px;}
+.logo_icbc{background-position:0 -576px;}
+.logo_ccb{background-position:0 -256px;}
+.logo_boc{background-position:0 -448px;}
+.logo_cmb{background-position:0 -384px;}
+.logo_cmbc{background-position:0 -416px;}
+.logo_cebb{background-position:0 -288px;}
+.logo_abc{background-position:0 -192px;}
+.logo_bofc{background-position:0 -224px;}
+.logo_gdb{background-position:0 -480px;}
+.logo_cib{background-position:0 -320px;}
+.logo_sdb{background-position:0 -672px;}
+.logo_spdb{background-position:0 -768px;}
+.logo_hccb{background-position:0 -544px;}
+.logo_ecitic{background-position:0 -352px;}
+.logo_bjrcb{background-position:0 -160px;}
+.logo_bos{background-position:0 -704px;}
+.logo_nbcb{background-position:0 -608px;}
+.logo_pingan{background-position:0 -736px;}

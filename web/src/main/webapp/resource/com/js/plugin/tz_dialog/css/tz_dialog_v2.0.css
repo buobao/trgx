@@ -1,0 +1,19 @@
+/*tz_dialog start*/
+.tz_dialog{width:320px;height:166px;box-shadow: 0px 0px 5px 0px #000;position:absolute;left:0;top:0;z-index:9999;}
+.tz_dialog .t_title{width:320px;height:42px;background:#119da9;padding: 10px 15px;cursor: move;}
+.tz_dialog .t_title .t_h3{font-size:14px;color:#fff;font-weight:bold;float:left;}
+.tz_dialog .t_title .t_close{float:right;color:#fff;text-decoration:none;}
+.tz_dialog .t_content{width:320px;height:125px;background:#EEF3FA;}
+.tz_dialog .t_content .t_message{padding: 18px 40px;}
+.tz_dialog .t_content .t_message .t_clear{clear:both;}
+.tz_dialog .t_content .t_message .t_icon{width:44px;height:38px;display:block;background:url("../images/dialog.png") no-repeat -149px -3px;float:left;}
+.tz_dialog .t_content .t_message .t_con{float:left;padding: 0px 20px;width:190px}
+.tz_dialog .t_content .t_btn{text-align:center;}
+.tz_dialog .t_content .t_btn input{width:100px;border:1px solid #119da9;padding:6px 0;font-size:14px;font-family:"微软雅黑";background:#fff;cursor: pointer;}
+.tz_dialog .t_content .t_btn input:hover{background:#EAEAEA;outline:none;}
+/*end tz_dialog*/
+
+/*tz_yy start*/
+.tz_yy{width:100%;height:100%;background:#000;position:fixed;top:0;left:0;
+opacity:0.5;filter:alpha(opacity=50);z-index: 999;}
+/*end tz_yy*/
