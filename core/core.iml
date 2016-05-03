@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: com.joint:us-base:2.1.1" level="project" />
-    <orderEntry type="module" module-name="us-dict" />
+    <orderEntry type="library" name="Maven: com.joint:us-dict:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.poi:poi:3.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml:3.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml-schemas:3.9" level="project" />
@@ -21,7 +21,7 @@
     <orderEntry type="library" name="Maven: com.google.guava:guava:14.0.1" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.3.2" level="project" />
-    <orderEntry type="module" module-name="flow-base" />
+    <orderEntry type="library" name="Maven: com.joint:flow-base:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-engine:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-image-generator:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-email:1.2" level="project" />

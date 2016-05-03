@@ -8,6 +8,8 @@
   <modules>
     <module>core</module>
     <module>web</module>
+    <module>flow-base</module>
+    <module>us-dict</module>
   </modules>
   <name>trgx</name>
   <url>http://maven.apache.org</url>

@@ -10,6 +10,7 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
@@ -21,7 +22,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
@@ -33,7 +33,7 @@
     <orderEntry type="library" name="Maven: com.joint:ec-jdom:1.1.3" level="project" />
     <orderEntry type="library" name="Maven: com.joint:wechat4j:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.joint:ec-core:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="module" module-name="us-dict" />
+    <orderEntry type="library" name="Maven: com.joint:us-dict:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-modeler:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.2.3.RELEASE" level="project" />
@@ -64,7 +64,7 @@
     <orderEntry type="library" name="Maven: org.activiti:activiti-simple-workflow:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-bpmn-layout:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.tinyjee.jgraphx:jgraphx:1.10.4.1" level="project" />
-    <orderEntry type="module" module-name="flow-base" />
+    <orderEntry type="library" name="Maven: com.joint:flow-base:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-engine:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-image-generator:5.17.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-email:1.2" level="project" />
